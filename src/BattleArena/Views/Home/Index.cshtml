@@ -2,4 +2,30 @@
     ViewData["Title"] = "Home Page";
 }
 
+<div id="start">
+    
+
+</div>
+
+
 <canvas id="canvas"></canvas>
+
+<div id="cover" class="overlay">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+
+    <!-- Overlay content -->
+    <div class="overlay-content">
+        <h1>Funky Arena!</h1>
+        <table>
+            <tr>
+                <td><input id="username" placeholder="Username" value=""/></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" value="Begin!" onclick="beginClick()"/></td>
+            </tr>
+        </table>
+    </div>
+
+</div>
+
+<span onclick="openNav()">open</span>

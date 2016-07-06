@@ -29,6 +29,10 @@ namespace BattleArena
         {
             // Add framework services.
             services.AddMvc();
+            services.AddSignalR(options =>
+            {
+                options.Hubs.EnableDetailedErrors = true;
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -48,6 +52,9 @@ namespace BattleArena
             }
 
             app.UseStaticFiles();
+
+            app.UseWebSockets();
+            app.UseSignalR();
 
             app.UseMvc(routes =>
             {

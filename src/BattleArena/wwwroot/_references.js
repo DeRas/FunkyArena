@@ -1,5 +1,7 @@
 ﻿/// <autosync enabled="true" />
+/// <reference path="js/gamehub.js" />
 /// <reference path="js/main.js" />
+/// <reference path="js/overlay.js" />
 /// <reference path="js/site.js" />
 /// <reference path="lib/bootstrap/dist/js/bootstrap.js" />
 /// <reference path="lib/jquery/dist/jquery.js" />
