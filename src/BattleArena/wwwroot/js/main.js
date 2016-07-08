@@ -6,9 +6,11 @@ var Board = (function () {
         this.draw();
     }
     Board.prototype.draw = function () {
-        this.resizeCanvas();
-        this.reset();
-        this.drawBoard();
+        if (this.boardSize != null) {
+            this.resizeCanvas();
+            this.reset();
+            this.drawBoard();
+        }
     };
     Board.prototype.resizeCanvas = function () {
         this.theCanvas.width = window.innerWidth;
@@ -54,7 +56,7 @@ var Board = (function () {
     return Board;
 }());
 console.log("Start!");
-var board = new Board(20);
+var board;
 window.addEventListener('resize', resizedWindow, false);
 function resizedWindow() {
     board.draw();
@@ -64,10 +66,8 @@ var Player = (function () {
     }
     return Player;
 }());
-var player = new Player();
-player.x = 2;
-player.y = 2;
-board.movePlayer(player, 3, 2);
+var players;
+var player;
 document.onkeydown = checkKey;
 function checkKey(e) {
     e = e || window.event;
@@ -84,7 +84,33 @@ function checkKey(e) {
         board.movePlayer(player, player.x + 1, player.y);
     }
 }
-board.drawPlayer(6, 2);
-board.deletePlayer(6, 2);
-board.drawPlayer(7, 2);
-board.deletePlayer(7, 2);
+//interface SignalR {
+//    gameHub: HubProxy;
+//}
+//interface HubProxy {
+//    client: IGameHubClient;
+//    server: IGameHubServer;
+//}
+//interface IGameHubClient {
+//    playerJoined();
+//}
+//interface IGameHubServer {
+//    playerMove(conid: string, x: number, y: number): IGameHubClient;
+//}
+//module Portal.App {
+//    export class Controller implements HubProxy {
+//        server: IGameHubServer;
+//        client: IGameHubClient;
+//        constructor(role: Portal.App.Model.IRole) {
+//            this.role = role;
+//            this.server = $.connection.roleHub.server;
+//            this.client = $.connection.roleHub.client;
+//        }
+//        getUserRoles() {
+//            this.server.getUserRoles();
+//        }
+//        populateUserRoles(roles: string[]) {
+//            console.log('populated');
+//        }
+//    }
+//} 

@@ -1,4 +1,4 @@
-﻿{
+{
   "dependencies": {
     "Microsoft.NETCore.App": {
       "version": "1.0.0",
@@ -21,7 +21,8 @@
     "Microsoft.Extensions.Options.ConfigurationExtensions": "1.0.0",
     "Microsoft.VisualStudio.Web.BrowserLink.Loader": "14.0.0",
     "Microsoft.AspNetCore.SignalR.Server": "0.1.0-rtm-21431",
-    "Microsoft.AspNetCore.WebSockets.Server": "0.1.0"
+    "Microsoft.AspNetCore.WebSockets.Server": "0.1.0",
+    "signalr.TypeScript.DefinitelyTyped": "0.4.1"
   },
 
   "tools": {

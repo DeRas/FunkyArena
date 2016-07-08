@@ -10,10 +10,24 @@ namespace BattleArena.Hubs
     [HubName("funky")]
     public class GameHub : Hub
     {
+        
+
         public void PlayerJoin(string username)
         {
-            Console.WriteLine("!!!!!!!!!!!!! PLAYER JOINED !!!!!!!!!!!!!!");
+            Game.AddPlayerName(username, Context.ConnectionId);
             Console.WriteLine($"!!!!!!!!!!!!! {username} !!!!!!!!!!!!!!");
+        }
+
+
+        public override Task OnConnected()
+        {
+            Game.AddPlayer(Context.ConnectionId);
+            return null;
+        }
+
+        public void Movement(int x)
+        {
+            Game.PlayerMoved(x, Context.ConnectionId);
         }
     }
 }

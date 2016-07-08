@@ -1,5 +1,7 @@
 ﻿/// <autosync enabled="true" />
+/// <reference path="js/board.js" />
 /// <reference path="js/gamehub.js" />
+/// <reference path="js/gamesignals.js" />
 /// <reference path="js/main.js" />
 /// <reference path="js/overlay.js" />
 /// <reference path="js/site.js" />
