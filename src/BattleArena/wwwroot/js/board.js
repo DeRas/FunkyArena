@@ -62,7 +62,7 @@ function movePlayer(player) {
     var found = false;
     var i = players.length;
     while (i--) {
-        if (players[i].username === player.username){
+        if (players[i].UserName === player.UserName){
             found = true;
             break;
         }

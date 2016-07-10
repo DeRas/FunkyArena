@@ -18,7 +18,7 @@
     "BattleArena": {
       "commandName": "Project",
       "launchBrowser": true,
-      "launchUrl": "http://localhost:5000",
+      "launchUrl": "http://192.168.0.104:5000",
       "environmentVariables": {
         "ASPNETCORE_ENVIRONMENT": "Development"
       }
