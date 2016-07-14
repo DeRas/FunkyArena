@@ -32,8 +32,21 @@ namespace BattleArena
                 Player player = playerDict[connectionId];
                 player.UserName = username;
                 PlacePlayer(player);
+
+                foreach (var play in playerDict.Values)
+                {
+                    if (play != player)
+                        _context.Clients.Client(connectionId).playerMove(play);
+                }
+
+                //AddZombie();
             }
 
+        }
+
+        private void AddZombie()
+        {
+            throw new NotImplementedException();
         }
 
         internal void PlayerMoved(int x, string conId)
@@ -44,15 +57,19 @@ namespace BattleArena
                 switch (x)
                 {
                     case 1:
-                        player.y--;
+                        if (player.y > 0)
+                            player.y--;
                         break;
                     case 2:
-                        player.y++;
+                        if (player.y < BoardSize - 1)
+                            player.y++;
                         break;
                     case 3:
-                        player.x--;
+                        if (player.x > 0)
+                            player.x--;
                         break;
                     case 4:
+                        if(player.x < BoardSize -1)
                         player.x++;
                         break;
                     default:
