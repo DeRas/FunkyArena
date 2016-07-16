@@ -14,7 +14,7 @@ namespace BattleArena
             var host = new WebHostBuilder()
                 .UseKestrel()
                 .UseContentRoot(Directory.GetCurrentDirectory())
-                .UseUrls("http://192.168.0.104:5000")
+                .UseUrls("http://localhost:80")
                 .UseIISIntegration()
                 .UseStartup<Startup>()
                 .Build();
